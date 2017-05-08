@@ -1,5 +1,5 @@
 /**
-* cedar-core - v1.0.0 - Sun May 07 2017 20:19:46 GMT-0400 (EDT)
+* cedar-core - v1.0.0 - Sun May 07 2017 23:11:03 GMT-0400 (EDT)
 * Copyright (c) 2017 Environmental Systems Research Institute, Inc.
 * ISC
 */
@@ -9,13 +9,16 @@
 	(factory((global.cedar = global.cedar || {})));
 }(this, (function (exports) { 'use strict';
 
-var version = "1.0.0";
+// import { version } from '../package.json';
+// export { version };
 
 function square (x) {
+  fetch('blah.json').then(function (resp) {
+    console.log('squee');
+  });
   return x * x;
 }
 
-exports.version = version;
 exports.square = square;
 
 Object.defineProperty(exports, '__esModule', { value: true });
