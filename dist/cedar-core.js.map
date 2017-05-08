@@ -1,0 +1,1 @@
+{"version":3,"file":"cedar-core.js","sources":["../src/index.js"],"sourcesContent":["import { version } from '../package.json';\nexport {version};\n\nexport function square (x) {\n  return x * x;\n}\n"],"names":[],"mappings":";;;;;;;;;;;;;AAGO,SAAS,MAAM,EAAE,CAAC,EAAE;EACzB,OAAO,CAAC,GAAG,CAAC,CAAC;CACd;;;;;;;"}
