@@ -48,8 +48,13 @@
       "karma.*.js",
       "wallaby.js",
       "/profiles/",
-      "/tests/",
+      "/test/",
       "/dist/"
+    ]
+  },
+  "ava": {
+    "require": [
+      "babel-register"
     ]
   }
 }
