@@ -5,10 +5,11 @@
   "main": "dist/cedar-core.js",
   "scripts": {
     "clean:dist": "rimraf ./dist && mkdir dist",
+    "clean:compiled": "rimraf ./compiled && mkdir compiled",
     "lint": "semistandard --verbose | snazzy",
     "lint:fix": "semistandard --fix",
-    "prebuild": "npm run lint && npm run clean:dist",
-    "build": "rollup -c profiles/dev.js & rollup -c profiles/prod.js",
+    "prebuild": "npm run clean:dist",
+    "build": "tsc && rollup -c profiles/dev.js & rollup -c profiles/prod.js",
     "test": "ava"
   },
   "repository": {

@@ -1,5 +1,5 @@
 import json from 'rollup-plugin-json';
-import buble from 'rollup-plugin-buble';
+// import buble from 'rollup-plugin-buble';
 
 const pkg = require('../package.json');
 const copyright = `/**
@@ -9,10 +9,10 @@ const copyright = `/**
 */`;
 
 export default {
-  entry: 'src/index.js',
+  entry: 'compiled/index.js',
   moduleName: 'cedar',
   format: 'umd',
-  plugins: [json(), buble()],
+  plugins: [json()],
   globals: {
     'cedar-core': 'cedar'
   },

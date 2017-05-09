@@ -1,2 +1,8 @@
 node_modules
+
+# Build output
 dist
+compiled
+src/**/*.js
+src/**/*.map
+src/**/*.d.ts
