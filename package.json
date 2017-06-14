@@ -10,7 +10,7 @@
     "lint:fix": "semistandard --fix",
     "prebuild": "npm run clean:dist",
     "build": "tsc && rollup -c profiles/dev.js & rollup -c profiles/prod.js",
-    "test": "ava"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -49,6 +49,21 @@
       "/profiles/",
       "/test/",
       "/dist/"
+    ]
+  },
+  "jest": {
+    "transform": {
+      ".(ts)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "\\.spec\\.ts?$",
+    "modulePaths": [
+      "<rootDir>/src/",
+      "<rootDir>/node_modules/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
     ]
   }
 }
