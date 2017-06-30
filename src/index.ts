@@ -1,12 +1,6 @@
-// import {version} from '../package.json';
+// import {cubed} from './query/query'
 // export {version};
 
-import {cubed} from './query/index';
-
-export function square (x) {
-  return x * x;
-}
-
-export function bob (x:number) {
-  return cubed(square(x));
+export function square(x: number) {
+  return x * x
 }

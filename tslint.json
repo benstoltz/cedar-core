@@ -1,7 +1,27 @@
 {
   "extends": "tslint:latest",
   "rules": {
-    "quotemark": ["single"],
-    "no-string-literal": false
+    "comment-format": [
+      true,
+      "check-space"
+    ],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "no-duplicate-variable": true,
+    "no-eval": true,
+    "no-string-literal": false,
+    "semicolon": [
+      true,
+      "never"
+    ],
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "object-literal-sort-keys": false,
+    "trailing-comma": false
   }
 }

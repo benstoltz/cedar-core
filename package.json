@@ -6,11 +6,13 @@
   "scripts": {
     "clean:dist": "rimraf ./dist && mkdir dist",
     "clean:compiled": "rimraf ./compiled && mkdir compiled",
-    "lint": "semistandard --verbose | snazzy",
-    "lint:fix": "semistandard --fix",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "lint:fix": "tslint --fix",
     "prebuild": "npm run clean:dist",
     "build": "tsc && rollup -c profiles/dev.js & rollup -c profiles/prod.js",
-    "test": "jest"
+    "pretest": "npm run lint",
+    "test": "jest --coverage",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
   "homepage": "https://github.com/benstoltz/cedar-core#readme",
   "devDependencies": {
     "@types/jest": "^19.2.4",
+    "@types/node": "^7.0.31",
     "jest": "^20.0.4",
     "rimraf": "^2.6.1",
     "rollup": "^0.41.6",
@@ -40,16 +43,8 @@
     "semistandard": "^11.0.0",
     "snazzy": "^7.0.0",
     "ts-jest": "^20.0.6",
+    "tslint": "^5.4.3",
     "typescript": "^2.3.2"
-  },
-  "semistandard": {
-    "ignore": [
-      "karma.*.js",
-      "wallaby.js",
-      "/profiles/",
-      "/test/",
-      "/dist/"
-    ]
   },
   "jest": {
     "transform": {
