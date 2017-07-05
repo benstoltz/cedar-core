@@ -3,7 +3,7 @@
  * @param  {object} source Empty object that other objects will be merged into
  * @return {object}        Merged objects
  */
-export function mixin( source: any, ...args ) {
+export function deepMerge( source: any, ...args ) {
   const arrOfObjs = [...args]
   for (const i in arrOfObjs) {
     if (i) {
@@ -21,9 +21,9 @@ export function mixin( source: any, ...args ) {
 
 function _arrOrObj(val: any) {
   return Array.isArray(val)
-    ? mixin([], val)
+    ? deepMerge([], val)
     : typeof val === 'object'
-    ? mixin({}, val)
+    ? deepMerge({}, val)
     : val
 }
 
@@ -44,7 +44,7 @@ function entries(obj: object) {
 
 const helpers = {
   entries,
-  mixin
+  deepMerge
 }
 
 export default helpers
